@@ -58,8 +58,8 @@ public class testappexample implements ApplicationListener {
         spriteBatch = new SpriteBatch();
         texture = new Texture(Gdx.files.internal("data/face.gif"));
 		Gdx.gl.glClearColor(0.3f, 0.3f, 0.3f, 1);
-		winBounds = new Rectangle(Gdx.graphics.getWidth()/2 -10,
-				Gdx.graphics.getHeight()/2 -10,
+		winBounds = new Rectangle(Gdx.graphics.getWidth()/2 -25,
+				Gdx.graphics.getHeight()/2 -25,
 				50,
 				50 );
 	}
@@ -90,7 +90,7 @@ public class testappexample implements ApplicationListener {
 		int centerX = Gdx.graphics.getWidth() / 2;
         int centerY = Gdx.graphics.getHeight() / 2;
         spriteBatch.begin();
-        spriteBatch.setColor(Color.BLACK);
+        //spriteBatch.setColor(Color.WHITE);
         spriteBatch.draw(texture, 
                 touchpoint.x, 
                 -(touchpoint.y) + Gdx.graphics.getHeight() , 
@@ -98,7 +98,7 @@ public class testappexample implements ApplicationListener {
         font.draw(spriteBatch, touchpoint.x + " " + -touchpoint.y, 20, 20);
         spriteBatch.end();
         if (OverlapTester.pointInRectangle(winBounds, touchpoint.x, touchpoint.y)){
-        	Gdx.gl.glClearColor(0, 1, 1, 1);
+        	Gdx.gl.glClearColor(0, 1, 0, 1);
         }else Gdx.gl.glClearColor(0.3f, 0.3f, 0.3f, 1);
 
 	}
