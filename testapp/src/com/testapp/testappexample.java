@@ -47,6 +47,7 @@ public class testappexample implements ApplicationListener {
     Vector2 textDirection = new Vector2(1, 1);
     Texture texture;
     Rectangle winBounds;
+    Texture background;
 
 	@Override
 	public void create() {
@@ -57,6 +58,7 @@ public class testappexample implements ApplicationListener {
         font.setColor(Color.RED);
         spriteBatch = new SpriteBatch();
         texture = new Texture(Gdx.files.internal("data/face.gif"));
+        //background = new Texture(Gdx.files.internal("data/background.png"));
 		Gdx.gl.glClearColor(0.3f, 0.3f, 0.3f, 1);
 		winBounds = new Rectangle(Gdx.graphics.getWidth()/2 -25,
 				Gdx.graphics.getHeight()/2 -25,
@@ -66,7 +68,7 @@ public class testappexample implements ApplicationListener {
 
 	@Override
 	public void dispose() {
-		// TODO Auto-generated method stub
+
 		
 	}
 
@@ -90,12 +92,13 @@ public class testappexample implements ApplicationListener {
 		int centerX = Gdx.graphics.getWidth() / 2;
         int centerY = Gdx.graphics.getHeight() / 2;
         spriteBatch.begin();
-        //spriteBatch.setColor(Color.WHITE);
+        spriteBatch.setColor(Color.WHITE);
+        //spriteBatch.draw(background, 0, 0);
         spriteBatch.draw(texture, 
                 touchpoint.x, 
                 -(touchpoint.y) + Gdx.graphics.getHeight() , 
                 0, 0, texture.getWidth(), texture.getHeight());
-        font.draw(spriteBatch, touchpoint.x + " " + -touchpoint.y, 20, 20);
+        font.draw(spriteBatch, touchpoint.x + " " + -touchpoint.y + " " + Gdx.graphics.getFramesPerSecond(), 20, 20);
         spriteBatch.end();
         if (OverlapTester.pointInRectangle(winBounds, touchpoint.x, touchpoint.y)){
         	Gdx.gl.glClearColor(0, 1, 0, 1);
