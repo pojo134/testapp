@@ -10,6 +10,6 @@ public class testappActivity extends AndroidApplication {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initialize(new testappexample(), false);
+        initialize(new testapp2(), false);
     }
 }
