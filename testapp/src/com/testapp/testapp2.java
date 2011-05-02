@@ -25,12 +25,25 @@ public class testapp2 implements ApplicationListener {
 	public void dispose() {
 		// TODO Auto-generated method stub
 		MainMenu.music.dispose();
+		GameScreen.effect1.dispose();
+		GameScreen.effect2.dispose();
+		GameScreen.effect3.dispose();
+		GameScreen.effect4.dispose();
+		GameScreen.effect5.dispose();
+		GameScreen.effect6.dispose();
+		GameScreen.effect7.dispose();
+		GameScreen.effect8.dispose();
+		GameScreen.effect9.dispose();
+		GameScreen.effect10.dispose();
+		GameScreen.effect11.dispose();
+		GameScreen.effect12.dispose();
 	}
 
 	@Override
 	public void pause() {
 		// TODO Auto-generated method stub
 		MainMenu.music.pause();
+		Settings.save();
 	}
 
 	@Override

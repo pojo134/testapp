@@ -25,12 +25,12 @@ public class GameOverScreen implements Screen {
 		spriteBatch = new SpriteBatch();
 		font = new BitmapFont();
 		font.setScale(1.5f);
+		font.setColor(1f, 91/255f, 0f, 1);
 		music2.play();
 	}
 
 	@Override
 	public void update(Application app) {
-
 		if(time <= 400){
 			time += Gdx.graphics.getDeltaTime() * 100;
 		}
@@ -47,8 +47,8 @@ public class GameOverScreen implements Screen {
 		spriteBatch.setColor(Color.WHITE);
 		spriteBatch.draw(background, 0f, 0f,screenWidth,screenHeight);
 		font.draw(spriteBatch,"Congratulations!",Gdx.graphics.getWidth()/2 - 140,Gdx.graphics.getHeight()/2);
-		font.draw(spriteBatch,"You have beat the game!", Gdx.graphics.getWidth()/2 - 120, Gdx.graphics.getHeight()/2 - 20);
-		font.draw(spriteBatch, ":) :) :) :)", Gdx.graphics.getWidth()/2 - 90, Gdx.graphics.getHeight()/2 -40);
+		font.draw(spriteBatch,"You have beat the game", Gdx.graphics.getWidth()/2 - 120, Gdx.graphics.getHeight()/2 - 20);
+		font.draw(spriteBatch, Settings.wins + " times so far.", Gdx.graphics.getWidth()/2 - 90, Gdx.graphics.getHeight()/2 -40);
 		spriteBatch.end();
 		
 		

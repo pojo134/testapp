@@ -24,7 +24,9 @@ public class MainMenu implements Screen {
 		spriteBatch = new SpriteBatch();
 		font = new BitmapFont();
 		font.setScale(2.2f);
+		music.setLooping(true);
 		music.play();
+		Settings.load();
 	}
 
 	@Override
